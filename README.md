@@ -13,3 +13,6 @@ Exibe texto com rolagem automática.
 Controles para iniciar, pausar e ajustar a velocidade.
 
 Interface limpa com fundo escuro para facilitar a leitura.
+
+Abaixo um exemplo de como ele funciona na pratica;
+![Exemplo do Teleprompter](apresentação.gif)
