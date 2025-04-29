@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teleprompter</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 28px;
+      line-height: 1.8;
+      padding: 40px;
+      overflow: hidden;
+    }
+    #text {
+      white-space: pre-wrap;
+    }
+    #controls {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+    }
+    button {
+      margin-right: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <button onclick="startScroll()">▶ Iniciar</button>
+    <button onclick="pauseScroll()">⏸ Pausar</button>
+    <label>Velocidade:
+      <input type="range" min="1" max="10" value="3" id="speed" />
+    </label>
+  </div>
+  <div id="text">
+Dentro dessa div de class = text, voce faz a escrita do que quer que apareça na tela, como por exemplo: Uma apresentação de trabalho que vc queira treinar; Uma forma de estudo com tempo
+calculado; Pratica de Questões; e Etc.
+  </div>
+
+  <script>
+    let scrolling;
+    function startScroll() {
+      const speed = parseInt(document.getElementById("speed").value);
+      scrolling = setInterval(() => {
+        window.scrollBy(0, 1);
+      }, 100 / speed);
+    }
+
+    function pauseScroll() {
+      clearInterval(scrolling);
+    }
+  </script>
+</body>
+</html>
